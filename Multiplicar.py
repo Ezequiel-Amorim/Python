@@ -1,21 +1,31 @@
-from time import sleep
-print('-=-'*10)
-print('Escolha um número : ')
-opção = int(input())
-print('-=-'*10)
-sleep(2)
-print('--Calculando--')
-print('-=-'*10)
-sleep(1)
-print('{} x 1 = {}'.format(opção,(opção*1)))
-print('{} x 2 = {}'.format(opção,(opção*2)))
-print('{} x 3 = {}'.format(opção,(opção*3)))
-print('{} x 4 = {}'.format(opção,(opção*4)))
-print('{} x 5 = {}'.format(opção,(opção*5)))
-print('{} x 6 = {}'.format(opção,(opção*6)))
-print('{} x 7 = {}'.format(opção,(opção*7)))
-print('{} x 8 = {}'.format(opção,(opção*8)))
-print('{} x 9 = {}'.format(opção,(opção*9)))
-print('{} x 10 = {}'.format(opção,(opção*10)))
+print('-'*20)
 
-print('Fim')
+print('Escolha um número : ')
+valor1 = float(input('Número = '))
+
+print('Outro número : ')
+valor2 = float(input('Número = '))
+
+print('''Que tipo de operação deseja fazer?
+[ 1 ] Soma
+[ 2 ] Subtração
+[ 3 ] Divisão
+[ 4 ] Multiplicação
+''')
+opcao = int(input('Escolha : '))
+
+def calcular (opcao , valor1 , valor2):
+	match opcao:
+		case 1 :
+			return valor1 + valor2
+		case 2 :
+			return valor1 - valor2
+		case 3 :
+			return valor1 / valor2
+		case 4:
+			return valor1 * valor2
+		case _:
+			return 'Opção inválida'
+		
+resultado = calcular(opcao , valor1 ,valor2)
+print(f'Resultado: {resultado}')
